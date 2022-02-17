@@ -101,14 +101,14 @@ def run_episode(for_training):
 
     (current_room_desc, current_quest_desc, terminal) = framework.newGame()           # Descriptions of the current room and current quest state
 
-    while not terminal:                                                               # Choose next action and execute from epsilon-greedy policy by taking a step
+    while not terminal:                                                               # Choose next action and execute from epsilon-greedy policy 
         
         current_room_desc_index = dict_room_desc[current_room_desc]                   # Current room description indices
         current_quest_desc_index = dict_quest_desc[current_quest_desc]                # Current quest description indices
 
         (next_action_index, next_object_index) = epsilon_greedy(current_room_desc_index, current_quest_desc_index, q_func, epsilon)
 
-        (next_room_desc, next_quest_desc, reward, terminal) = framework.step_game(
+        (next_room_desc, next_quest_desc, reward, terminal) = framework.step_game(    # Taking a step 
             current_room_desc,
             current_quest_desc,
             next_action_index,
