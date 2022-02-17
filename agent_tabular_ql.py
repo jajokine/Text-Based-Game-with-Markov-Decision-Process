@@ -1,6 +1,10 @@
 # ---------------------------------------------------------------------------------------------#
 #                                                                                              #
-#                                   Q-Learning Algorithm (tabular)                             #
+#                              Q-Learning Algorithm (tabular)                                  #
+#                                                                                              #
+#     The agent first trains each episode following an epsilon-greedy policy and by updating   #
+#     the Q values. After this, for each testing phase of each epoch, the cumulative           #
+#     discounted reward and the average reward performance for each episode is calculated      #
 #                                                                                              #
 # ---------------------------------------------------------------------------------------------#
 
@@ -62,7 +66,7 @@ def tabular_q_learning(q_func, current_state_1, current_state_2, action_index, o
         object_index (int): index of the current object
         reward (float): the immediate reward the agent recieves from playing current command
         next_state_1, next_state_2 (int, int): two indices describing the next state
-        terminal (bool): True if this eposode is over
+        terminal (bool): True if this eposode is over or the number of steps reaches the maximum number of steps for each episode
     
     Returns:
         None
@@ -127,7 +131,7 @@ def run_episode(for_training):
               current_quest_desc_index,
               next_action_index,
               next_object_index,
-              reward,
+              reward,                                                                 # A real valued number representing the one-step reward obtained at this step
               next_room_desc_index,
               current_quest_desc_index,
               terminal)
