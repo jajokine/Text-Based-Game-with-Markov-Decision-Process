@@ -4,7 +4,7 @@ MITx - MicroMasters Program on Statistics and Data Science - Machine Learning wi
 Fifth Project - Text-Based Game with Markov Decision Processes
 
 The fifth and final project of the MIT MicroMasters Program course on Machine Learning with Python was to create
-a game based on Reinforcement Learning (RL), Neural Networks (NN) and Markov Decision Processes (MDP).
+a game based on Reinforcement Learning (RL), Neural Networks (NN) and Markov Decision Process (MDP).
 
 The aim was to create a RL based model where the agent of the game learns by conducting certain actions in an environment that mimics
 that of a typical house, consisting of four rooms - a living room, a bed room, a kitchen and a garden with connecting path ways.
@@ -13,7 +13,7 @@ is to navigate through the different rooms and complete each given quest in orde
 that it is hungry, it needs to first navigate to the correct room - the kitchen - and complete the task there - eat an apple - in order
 to complete the quest and receive the reward.
 
-Moreover, in a MDP model, an agent earns rewards or points by taking the right action in order to complete a quest (+1) and
+Moreover, in MDP based policies, an agent earns rewards or points by taking the right action in order to complete a quest (+1) and
 looses them by taking the wrong one (-0.1) (e.g. trying to eat a TV in the living room). Each navigation step from a room to another
 consume points (-0.01). The agent thus gets feedback from its actions from which it learns the right policy (i.e. set of steps and actions)
 in order to complete the game with the maximum amount of rewards.
