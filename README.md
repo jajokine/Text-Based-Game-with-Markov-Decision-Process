@@ -1,7 +1,7 @@
 # Text-Based-Game-with-Markov-Decision-Process
 MITx - MicroMasters Program on Statistics and Data Science - Machine Learning with Python
 
-Fifth Project - Tex-Based Game with Markov Decision Processes
+Fifth Project - Text-Based Game with Markov Decision Processes
 
 The fifth and final project of the MIT MicroMasters Program course on Machine Learning with Python was to create
 a game based on Reinforcement Learning (RL), Neural Networks (NN) and Markov Decision Processes (MDP).
