@@ -7,7 +7,7 @@ The fifth and final project of the MIT MicroMasters Program course on Machine Le
 a game based on Reinforcement Learning (RL), Neural Networks (NN) and Markov Decision Processes (MDP).
 
 The aim was to create a RL based model where the agent of the game learns by conducting certain actions in an environment mimicing
-that of a typical house that consists four rooms - a living room, a bed room, a kitchen and a garden with connecting path ways.
+that of a typical house that consists of four rooms - a living room, a bed room, a kitchen and a garden with connecting path ways.
 Inside each room there are different quests and the goal of the game is to navigate through the different rooms and
 complete each quest in order to finish the game.
 
