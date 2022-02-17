@@ -117,8 +117,7 @@ def run_episode(for_training):
     
     epsilon = TRAINING_EP if for_training else TESTING_EP
 
-    epi_reward = 0.0                                                                                 # Initializing rewards
-    STEP_COUNT = 0                                                                                   # Initializing steps
+    episode_reward = 0.0                                                                             # Initializing rewards
     
     (current_room_desc, current_quest_desc, terminal) = framework.newGame()                          # Descriptions of the current room and current quest state
 
@@ -144,12 +143,12 @@ def run_episode(for_training):
 
         if not for_training:
             
-            epi_reward += (GAMMA**(STEP_COUNT - 1)) * reward                                          # Updating reward
+            episode_reward += (GAMMA**(framework.STEP_COUNT - 1)) * reward                            # Updating reward
 
         current_room_desc, current_quest_desc = next_room_desc, next_quest_desc                       # Preparing next step
 
     if not for_training:
-        return epi_reward
+        return episode_reward
 
 
 def run_epoch():
