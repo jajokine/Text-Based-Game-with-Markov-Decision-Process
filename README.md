@@ -13,7 +13,7 @@ is to navigate through the different rooms and complete each given quest in orde
 that it is hungry, it needs to first navigate to the correct room - the kitchen - and complete the task there - eat an apple - in order
 to complete the quest and receive the reward.
 
-Moreover, in a MDP an agent earns rewards or points by taking the right action in order to complete a quest (+1) and
+Moreover, in a MDP model, an agent earns rewards or points by taking the right action in order to complete a quest (+1) and
 looses them by taking the wrong one (-0.1) (e.g. trying to eat a TV in the living room). Each navigation step from a room to another
 consume points (-0.01). The agent thus gets feedback from its actions from which it learns the right policy (i.e. set of steps and actions)
 in order to complete the game with the maximum amount of rewards.
