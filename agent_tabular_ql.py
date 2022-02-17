@@ -36,7 +36,7 @@ NUM_OBJECTS = len(OBJECTS)
 
 def epsilon_greedy(state_1, state_2, q_func, epsilon):
     """Returns an action selected by an epsilon-Greedy exploration policy
-    (i.e. the agent chooses its action depending on the epsilon-Greedy policy)
+    (i.e. the agent chooses its action depending on an eploration parameter.)
     
     Args:
         state_1, state_2 (int, int): two indices describing the current state
