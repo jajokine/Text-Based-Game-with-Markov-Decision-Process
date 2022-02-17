@@ -75,7 +75,7 @@ def tabular_q_learning(q_func, current_state_1, current_state_2, action_index, o
     """
     
     if terminal:
-        maxQ = 0                                                  # Checks if episode is over
+        maxQ = 0                                                  # Checking if episode is over
     else:
         maxQ = np.max(q_func[next_state_1, next_state_2, :, :])   # If not: Q-value update: Q(s,c) <- (1-alpha)Q(s,c) + alpha[R(s,c) + gamma[Max(Q)(s',c')]
 
@@ -102,12 +102,12 @@ def run_episode(for_training):
     epsilon = TRAINING_EP if for_training else TESTING_EP
 
     
-    epi_reward = 0.0                                                                  # Initialization of rewards
-    STEP_COUNT = 0                                                                    # Initialization of steps
+    epi_reward = 0.0                                                                  # Initializing rewards
+    STEP_COUNT = 0                                                                    # Initializing steps
 
     (current_room_desc, current_quest_desc, terminal) = framework.newGame()           # Descriptions of the current room and current quest state
 
-    while not terminal:                                                               # Choose next action and execute from epsilon-greedy policy 
+    while not terminal:                                                               # Choosing next action and executing from epsilon-greedy policy 
         
         current_room_desc_index = dict_room_desc[current_room_desc]                   # Current room description indices
         current_quest_desc_index = dict_quest_desc[current_quest_desc]                # Current quest description indices
@@ -120,12 +120,12 @@ def run_episode(for_training):
             next_action_index,
             next_object_index)
         
-        STEP_COUNT = STEP_COUNT+1                                                     # Add a step to counter
+        STEP_COUNT = STEP_COUNT+1                                                     # Adding a step to counter
         
-        next_room_desc_index = dict_room_desc[next_room_desc]                         # Update room description index for next room, quest remains the same
+        next_room_desc_index = dict_room_desc[next_room_desc]                         # Updating room description index for next room, quest remains the same
 
 
-        if for_training:                                                              # Update Q-function
+        if for_training:                                                              # Updating Q-function
             
             tabular_q_learning(
               q_func,
@@ -140,9 +140,9 @@ def run_episode(for_training):
 
         if not for_training:
             
-            epi_reward += (GAMMA**(STEP_COUNT - 1)) * reward                          # Update reward
+            epi_reward += (GAMMA**(STEP_COUNT - 1)) * reward                          # Updating reward
 
-        current_room_desc, current_quest_desc = next_room_desc, next_quest_desc       # Prepare next step
+        current_room_desc, current_quest_desc = next_room_desc, next_quest_desc       # Preparing next step
 
     if not for_training:
         return epi_reward
@@ -182,11 +182,11 @@ def run():
 
 if __name__ == '__main__':
     
-    (dict_room_desc, dict_quest_desc) = framework.make_all_states_index()                 # Build dictionaries that use unique index for each state
+    (dict_room_desc, dict_quest_desc) = framework.make_all_states_index()                 # Building dictionaries that use unique index for each state
     NUM_ROOM_DESC = len(dict_room_desc)
     NUM_QUESTS = len(dict_quest_desc)
 
-    framework.load_game_data()                                                            # Load data
+    framework.load_game_data()                                                            # Loading data
 
     epoch_rewards_test = []                                                               # (NUM_RUNS * NUM_EPOCHS)
 
@@ -197,7 +197,7 @@ if __name__ == '__main__':
 
     x = np.arange(NUM_EPOCHS)
     fig, axis = plt.subplots()
-    axis.plot(x, np.mean(epoch_rewards_test, axis=0))                                     # Plot reward per epoch averaged per run
+    axis.plot(x, np.mean(epoch_rewards_test, axis=0))                                     # Plotting reward per epoch averaged per run
     axis.set_xlabel('Epochs')
     axis.set_ylabel('reward')
     axis.set_title(('Tablular: nRuns=%d, Epilon=%.2f, Epi=%d, alpha=%.4f' %
