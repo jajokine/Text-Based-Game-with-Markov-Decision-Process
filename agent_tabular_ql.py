@@ -103,7 +103,7 @@ def run_episode(for_training):
 
     
     epi_reward = 0.0                                                                  # Initializing rewards
-    STEP_COUNT = 0                                                                    # Initializing steps
+    
 
     (current_room_desc, current_quest_desc, terminal) = framework.newGame()           # Descriptions of the current room and current quest state
 
@@ -120,7 +120,7 @@ def run_episode(for_training):
             next_action_index,
             next_object_index)
         
-        STEP_COUNT = STEP_COUNT+1                                                     # Adding a step to counter
+        
         
         next_room_desc_index = dict_room_desc[next_room_desc]                         # Updating room description index for next room, quest remains the same
 
@@ -140,7 +140,7 @@ def run_episode(for_training):
 
         if not for_training:
             
-            epi_reward += (GAMMA**(STEP_COUNT - 1)) * reward                          # Updating reward
+            epi_reward += (GAMMA**(framework.STEP_COUNT - 1)) * reward                # Updating reward
 
         current_room_desc, current_quest_desc = next_room_desc, next_quest_desc       # Preparing next step
 
