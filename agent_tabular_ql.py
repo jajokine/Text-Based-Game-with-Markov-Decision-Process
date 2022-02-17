@@ -15,6 +15,8 @@ from tqdm import tqdm
 import framework
 import utils
 
+np.random.seed(42)        # Setting random seed 
+
 DEBUG = False
 
 GAMMA = 0.5               # Discounted factor
