@@ -3,7 +3,7 @@
 #                              Q-Learning Algorithm (linear)                                   #
 #                                                                                              #
 #     The agent first trains each episode following an epsilon-greedy policy and by            #
-#     updating the Q values through an approximated target value and a gradient step.          #
+#     updating the Q-values through an approximated target value and a gradient step.          #
 #     Textual state space is mapped into vector representation instead of unique indexing.     #
 #     After training, for each testing phase of each epoch, the cumulative discounted reward   #
 #     and the average reward performance for each episode is calculated.                       #
