@@ -3,7 +3,7 @@
 #                              Q-Learning Algorithm (Neural Network)                           #
 #                                                                                              #
 #     The agent first trains each episode following an epsilon-greedy policy and by updating   #
-#     the Q values through an approximated target value and a gradient step in a deep          #
+#     the Q-values through an approximated target value and a gradient step in a deep          #
 #     Neural Network. Textual state space is mapped into vector representation instead of      #
 #     unique indexing. After training, for each testing phase of each epoch, the cumulative    #
 #     discounted reward and the average reward performance for each episode is calculated.     #
@@ -65,7 +65,7 @@ def epsilon_greedy(state_vector, epsilon):
 
 class DQN(nn.Module):
     """A simple deep Q network implementation.
-    Computes Q values for each (action, object) tuple given an input state vector
+    Computes Q-values for each (action, object) tuple given an input state vector
     """
 
     def __init__(self, state_dim, action_dim, object_dim, hidden_size=100):
@@ -94,17 +94,17 @@ def deep_q_learning(current_state_vector, action_index, object_index, reward, ne
         None
     """
     
-    with torch.no_grad():                                                                                       # Disabling gradient calculation to save memory
+    with torch.no_grad():                                                                                         # Disabling gradient calculation to save memory
         q_values_action_next, q_values_object_next = model(next_state_vector)
     maxq_next = 1/2 * (q_values_action_next.max() + q_values_object_next.max())
 
     q_value_current_state = model(current_state_vector)
-    Q_val_current = 1/2 * (q_value_current_state[0][action_index] + q_value_current_state[1][object_index])     # Current Q value
+    Q_value_current = 1/2 * (q_value_current_state[0][action_index] + q_value_current_state[1][object_index])     # Current Q-value
 
-    maxQ = 0.0 if terminal else maxq_next                                                                       # Checking if episode is over
-    y = reward + GAMMA * maxQ                                                                                   # y = R(s, c) + gamma[Max(Q)(s',c')
+    maxQ = 0.0 if terminal else maxq_next                                                                         # Checking if episode is over
+    y = reward + GAMMA * maxQ                                                                                     # y = R(s, c) + gamma[Max(Q)(s',c')
 
-    loss = 1/2 * (y - Q_val_current)**2                                                                         # L(theta) = 1/2(y-Q(s,c,theta))^2
+    loss = 1/2 * (y - Q_value_current)**2                                                                         # L(theta) = 1/2(y-Q(s,c,theta))^2
 
     optimizer.zero_grad()
     loss.backward()
