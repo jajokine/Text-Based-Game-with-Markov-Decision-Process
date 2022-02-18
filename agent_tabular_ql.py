@@ -3,7 +3,7 @@
 #                              Q-Learning Algorithm (tabular)                                  #
 #                                                                                              #
 #     The agent first trains each episode following an epsilon-greedy policy and by updating   #
-#     the Q values. After this, for each testing phase of each epoch, the cumulative           #
+#     the Q-values. After this, for each testing phase of each epoch, the cumulative           #
 #     discounted reward and the average reward performance for each episode is calculated      #
 #                                                                                              #
 # ---------------------------------------------------------------------------------------------#
