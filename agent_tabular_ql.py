@@ -117,12 +117,12 @@ def run_episode(for_training):
             current_quest_desc,
             next_action_index,
             next_object_index)
-        
-        
-        next_room_desc_index = dict_room_desc[next_room_desc]                         # Updating room description index for next room, quest remains the same
 
 
         if for_training:                                                              # Updating Q-function
+            
+            next_room_desc_index = dict_room_desc[next_room_desc]                     # Updating room description index 
+            next_quest_desc_index = dict_quest_desc[next_quest_desc]                  # Updating quest description index 
             
             tabular_q_learning(
               q_func,
@@ -132,7 +132,7 @@ def run_episode(for_training):
               next_object_index,
               reward,                                                                 # A real valued number representing the one-step reward obtained at this step
               next_room_desc_index,
-              current_quest_desc_index,
+              next_quest_desc_index,
               terminal)
 
         if not for_training:
