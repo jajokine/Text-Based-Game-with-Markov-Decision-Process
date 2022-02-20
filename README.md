@@ -26,7 +26,8 @@ algorithms inside the game.
 Additional helper functions were given to complete the project in two weeks of time.
 
 **DATASET**
-              - game.tsv, contains all the texts to run the game.
+
+      - game.tsv: contains all the texts to run the game.
 
 **ACCESSING CODE**
 
