@@ -24,3 +24,10 @@ representation for textual state description. Finally, the last task was to impl
 algorithms inside the game.
 
 Additional helper functions were given to complete the project in two weeks of time.
+
+**DATASET**
+              - game.tsv, contains all the texts to run the game.
+
+**ACCESSING CODE**
+
+The different models are run each separetely from their files with the help of the two modules (utils.py and framework.py) that contain helper and utility functions. The files agent_tabular_ql.py and agent_linear.py contain models run on basic libraries while the file deep_q_learning.py uses neural networks from PyTorch. The dependencies and requirements can be seen from requirements.txt that can be installed in shell with the command pip install -r requirements.txt.
