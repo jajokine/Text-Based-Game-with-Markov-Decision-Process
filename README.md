@@ -35,5 +35,5 @@ The different models are run each separetely from their files with the help of t
 
 The dependencies and requirements can be seen from requirements.txt that can be installed in shell with the command:
 
-      - pip install -r requirements.txt
+      pip install -r requirements.txt
 
