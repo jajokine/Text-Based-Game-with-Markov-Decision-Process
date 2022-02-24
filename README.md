@@ -1,5 +1,6 @@
-# Text-Based-Game-with-Markov-Decision-Process
-MITx - MicroMasters Program on Statistics and Data Science - Machine Learning with Python
+## Text-Based-Game-with-Markov-Decision-Process
+
+# MITx - MicroMasters Program on Statistics and Data Science - Machine Learning with Python
 
 Fifth Project - Text-Based Game with Markov Decision Processes
 
@@ -25,11 +26,11 @@ algorithms inside the game.
 
 Additional helper functions were given to complete the project in two weeks of time.
 
-**DATASET**
+## Dataset
 
       - game.tsv: contains all the texts to run the game.
 
-**ACCESSING CODE**
+## Access and requirements
 
 The different models are run each separetely from their files with the help of the two modules (utils.py and framework.py) that contain helper and utility functions. The files agent_tabular_ql.py and agent_linear.py contain models run on basic libraries while the file deep_q_learning.py uses neural networks from PyTorch. 
 
