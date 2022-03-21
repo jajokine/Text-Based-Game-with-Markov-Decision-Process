@@ -44,6 +44,7 @@ def ewma(a, alpha=0.9):
     n = b.size
     w0 = np.ones(n) * alpha
     p = np.arange(n - 1, -1, -1)
+    
     return np.average(b, weights=w0 ** p)
 
 
@@ -56,6 +57,7 @@ def extract_words(input_string):
     """
     for c in punctuation + digits:
         input_string = input_string.replace(c, ' ' + c + ' ')
+        
     return input_string.lower().split()
 
 
@@ -70,6 +72,7 @@ def bag_of_words(texts):
         for word in word_list:
             if word not in dictionary:
                 dictionary[word] = len(dictionary)
+                
     return dictionary
 
 
