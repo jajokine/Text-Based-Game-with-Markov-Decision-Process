@@ -28,7 +28,7 @@ Additional helper functions were given to complete the project in two weeks of t
 
 ## Dataset
 
-      - game.tsv: contains all the texts to run the game.
+      - framework.py: contains the framework to run the game.
 
 ## Access and requirements
 
